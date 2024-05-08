@@ -1,0 +1,46 @@
+<div class="d-flex p-5 justify-content-center align-items-center">
+  <form [formGroup]="fornecedorForm" (ngSubmit)="inserir()">
+    <div class="d-flex justify-content-center flex-column">
+
+        <input type="hidden" formControlName="id">
+        <p>
+            Nome: <input type="text" formControlName="nome" class="m-1 p-1">
+        </p>
+        <p>
+            Telefone: <input type="text" formControlName="telefone" class="m-1 p-1">
+        </p>
+        <p>
+            Endereço: <input type="text" formControlName="endereco" class="m-1 p-1">
+        </p>
+        <button type="submit" class="btn btn-lg btn-primary m-1 p-2">Enviar</button>
+    </div>
+  </form>
+</div>
+
+<div class="container mt-3">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Fornecedora</th>
+        <th>Endereço</th>
+        <th>Contato</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (fornecedor of fornecedores; track $index) {
+      <tr>
+        <td>{{fornecedor.id}}</td>
+        <td>{{fornecedor.nome}}</td>
+        <td>{{fornecedor.endereco}}</td>
+        <td>{{fornecedor.telefone}}</td>
+        <td>
+          <a href="fornecedor/{{fornecedor.id}}" class="btn btn-info text-light p-2 m-2">Editar</a>
+          <input type="button" value="Remover" (click)="remover(fornecedor.id)" class="btn btn-danger p-2 m-2">
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,16 @@
+{
+  "fornecedores": [
+    {
+      "id": "111",
+      "nome": "Cintra Cintos",
+      "endereco": "Rua Citrus, 69",
+      "telefone": "123456789"
+    },
+    {
+      "id": "222",
+      "nome": "Pazikas Pás Zikas",
+      "endereco": "Rua Aracajatuba, 333",
+      "telefone": "987654321"
+    }
+  ]
+}
